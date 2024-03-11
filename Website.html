@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Data Visualization</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Spotify Recommendations Analytics Dashboard</h1>
+    </header>
+    <div class="container">
+        <div class="left-panel">
+            <div class="panel" id="artistPanel">
+                <!-- Artist Selection Panel -->
+                <h2>Artist Selection</h2>
+                <input type="text" placeholder="Search Artist" class="search-bar" id="artistInput">
+                <div class="panel" id="artistEntries"></div>
+                <!-- add input here for artist selection -->
+            </div>
+            <div class="panel" id="songPanel">
+                <!-- Song Selection Panel -->
+                <h2>Song Selection</h2>
+                <input type="text" placeholder="Search Song" class="search-bar" id="songInput">
+                <div class="panel" id="songEntries"></div>
+                <!-- add input here for song selection -->
+            </div>
+            <div class="panel" id="genrePanel">
+                <!-- Genre Selection Panel -->
+                <h2>Genre Selection</h2>
+                <input type="text" placeholder="Search Genre" class="search-bar" id="genreInput">
+                <div class="panel" id="genreEntries"></div>
+                <!-- add input here for genre selection -->
+            </div>
+        </div>
+        <div class="panel" id="correlationPanel">
+            <!-- Correlation Plot Panel -->
+            <h2>Correlation Plot</h2>
+            <canvas id="correlationCanvas"></canvas>
+        </div>
+        <div class="right-panel">
+            <div class="panel" id="recommendedPanel">
+                <!-- Recommended Songs Panel -->
+                <h2>Recommended Songs</h2>
+                <!-- display recommended songs here -->
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script> 
+</body>
+</html>
