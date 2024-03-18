@@ -10,6 +10,12 @@
     <header>
         <h1>Spotify Recommendations Analytics Dashboard</h1>
     </header>
+    <div class="welcome-panel panel">
+        <h2>Welcome</h2> 
+        <div class="welcome-section">
+            <p>Hello! Welcome to the Spotify Recommendations Analytics Dashboard. The power of this dashboard will be able to explain to you why certain songs are recommended to you! Please utilize the selection tabs and sliders to set your preferences. The Recommended Songs tab will generate a list of songs based on your input and then provide a correlation chart to visualize the algorithm's reasoning. Enjoy!</p>
+        </div>
+    </div>
     <div class="container">
         <div class="left-panel">
             <div class="panel" id="artistPanel">
@@ -34,6 +40,20 @@
                 <!-- add input here for genre selection -->
             </div>
         </div>
+        <div class="panel" id="qualityPanel">
+            <!-- Quality Selection Panel -->
+            <h2>Music Quality Preferences</h2>
+            <div class="slider-container">
+                <label class="slider-label">Danceability:</label>
+                <input type="range" min="0" max="100" value="50" class="slider" id="danceabilitySlider">
+                <span class="slider-value" id="danceabilityValue">Medium</span>
+            </div>
+            <div class="slider-container">
+                <label class="slider-label">Tempo:</label>
+                <input type="range" min="0" max="100" value="50" class="slider" id="tempoSlider">
+                <span class="slider-value" id="tempoValue">Medium</span>
+            </div>
+        </div>
         <div class="panel" id="correlationPanel">
             <!-- Correlation Plot Panel -->
             <h2>Correlation Plot</h2>
@@ -43,10 +63,11 @@
             <div class="panel" id="recommendedPanel">
                 <!-- Recommended Songs Panel -->
                 <h2>Recommended Songs</h2>
-                <!-- display recommended songs here -->
+                <!-- display recommended songs -->
             </div>
         </div>
     </div>
-    <script src="script.js"></script> 
+    <img src="https://www.butlerbranding.com/wp-content/uploads/2019/09/Spotify-Logo-Large.jpg" alt="Spotify Logo" class="spotify-logo">
+    <script src="script.js"></script>
 </body>
 </html>
