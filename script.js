@@ -1,20 +1,48 @@
+function updateSliderValueText(sliderId, valueId) {
+    var slider = document.getElementById(sliderId);
+    var value = document.getElementById(valueId);
+
+    var position = slider.value;
+
+    // Determine texst based on the slider position
+    var text;
+    if (position <= 33) {
+        text = "Low";
+    } else if (position <= 66) {
+        text = "Medium";
+    } else {
+        text = "High";
+    }
+
+
+    value.textContent = text;
+}
+
+document.getElementById("danceabilitySlider").addEventListener("input", function() {
+    updateSliderValueText("danceabilitySlider", "danceabilityValue");
+});
+
+document.getElementById("tempoSlider").addEventListener("input", function() {
+    updateSliderValueText("tempoSlider", "tempoValue");
+});
+
 function addEntry(inputId) {
-    // Get the input value
     var entry = document.getElementById(inputId).value;
 
-    // Create a new div element
+    
     var entryDiv = document.createElement("div");
     entryDiv.textContent = entry; // Set the text content of the div
 
-    // Create delete button
+    // Creating delete button
     var deleteButton = document.createElement("button");
     deleteButton.textContent = "Delete";
+    deleteButton.classList.add("delete-button");
     deleteButton.addEventListener("click", function() {
         entryDiv.remove();
         updatePanelHeight(inputId);
     });
 
-    // Append the new div and delete button to the respective panel
+    // Append new and delete button to the respective panel
     var panelId = inputId.replace("Input", "Entries");
     var panel = document.getElementById(panelId);
     entryDiv.appendChild(deleteButton);
@@ -22,6 +50,9 @@ function addEntry(inputId) {
 
     // Extend the panel based on the number of entries
     updatePanelHeight(inputId);
+
+    // Clear input value
+    clearInput(inputId);
 }
 
 function updatePanelHeight(inputId) {
@@ -32,7 +63,11 @@ function updatePanelHeight(inputId) {
     panel.parentElement.style.height = panelHeight + "px";
 }
 
-// Add event listeners to input elements
+// Function to clear input value
+function clearInput(inputId) {
+    document.getElementById(inputId).value = ""; 
+}
+
 document.getElementById("artistInput").addEventListener("change", function() {
     addEntry("artistInput");
 });
